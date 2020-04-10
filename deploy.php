@@ -35,7 +35,7 @@ task('deploy:secrets', function () {
 });
 
 // Hosts
-host('grabyourevent.com') // Name of the server
+host('deployer') // Name of the server
 ->hostname(getenv('APP_HOST')) // Hostname or IP address
 ->stage('production') // Deployment stage (production, staging, etc)
 ->user('deploy') // SSH user
