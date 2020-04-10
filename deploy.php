@@ -35,11 +35,11 @@ task('deploy:secrets', function () {
 });
 
 // Hosts
-host('production.app.com') // Name of the server
+host('grabyourevent.com') // Name of the server
 ->hostname('165.22.43.159') // Hostname or IP address
 ->stage('production') // Deployment stage (production, staging, etc)
 ->user('root') // SSH user
-->set('deploy_path', '/var/www'); // Deploy path
+->set('deploy_path', '/var/www/grabyourevent.com'); // Deploy path
 
 after('deploy:failed', 'deploy:unlock'); // Unlock after failed deploy
 
