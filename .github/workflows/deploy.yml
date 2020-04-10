@@ -62,5 +62,6 @@ jobs:
           ssh-disable-host-key-checking: true
       - name: Deploy to Prod
         env:
+          APP_HOST: ${{ secrets.APP_HOST }}
           DOT_ENV: ${{ secrets.DOT_ENV }}
         run: dep deploy production --tag=${{ env.GITHUB_REF }} -vvv
