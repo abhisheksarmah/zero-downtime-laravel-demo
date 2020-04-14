@@ -35,11 +35,11 @@ task('deploy:secrets', function () {
 });
 
 // Hosts
-host('deployer') // Name of the server
+host('test.softinvoice.in') // Name of the server
 ->hostname(getenv('APP_HOST')) // Hostname or IP address
 ->stage('production') // Deployment stage (production, staging, etc)
-->user('deploy') // SSH user
-->set('deploy_path', '/var/www/grabyourevent.com'); // Deploy path
+->user('deployer') // SSH user
+->set('deploy_path', '/var/www/test-laravel'); // Deploy path
 
 after('deploy:failed', 'deploy:unlock'); // Unlock after failed deploy
 
