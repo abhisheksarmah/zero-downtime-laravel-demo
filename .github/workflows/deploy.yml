@@ -55,11 +55,11 @@ jobs:
       - name: Composer install
         run: composer install
       - name: Setup Deployer
-        uses: atymic/deployer-php-action@master
+        uses: atymic/deployer-php-action@0.1.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-          #ssh-disable-host-key-checking: true
+          ssh-disable-host-key-checking: true
       - name: Deploy to Prod
         env:
           APP_HOST: ${{ secrets.APP_HOST }}
