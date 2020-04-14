@@ -35,8 +35,8 @@ task('deploy:secrets', function () {
 });
 
 // Hosts
-host(getenv('APP_HOST')) // Name of the server
-// ->hostname(getenv('APP_HOST')) // Hostname or IP address
+host('softinvoice') // Name of the server
+->hostname(getenv('APP_HOST')) // Hostname or IP address
 ->stage('production') // Deployment stage (production, staging, etc)
 ->user('deployer') // SSH user
 ->set('deploy_path', '/var/www/test-laravel'); // Deploy path
