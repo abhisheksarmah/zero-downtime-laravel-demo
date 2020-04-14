@@ -7,7 +7,7 @@ require 'recipe/laravel.php';
 require 'recipe/rsync.php';
 
 set('application', 'dep-demo');
-// set('ssh_multiplexing', true); // Speeds up deployments
+set('ssh_multiplexing', true); // Speeds up deployments
 
 set('rsync_src', function () {
     return __DIR__; // If your project isn't in the root, you'll need to change this.
@@ -35,8 +35,8 @@ task('deploy:secrets', function () {
 });
 
 // Hosts
-host('test.softinvoice.in') // Name of the server
-->hostname(getenv('APP_HOST')) // Hostname or IP address
+host(getenv('APP_HOST')) // Name of the server
+// ->hostname(getenv('APP_HOST')) // Hostname or IP address
 ->stage('production') // Deployment stage (production, staging, etc)
 ->user('deployer') // SSH user
 ->set('deploy_path', '/var/www/test-laravel'); // Deploy path
