@@ -35,7 +35,7 @@ task('deploy:secrets', function () {
 });
 
 // Hosts
-host('softinvoice') // Name of the server
+host('test.softinvoice.in') // Name of the server
 ->hostname(getenv('APP_HOST')) // Hostname or IP address
 ->stage('production') // Deployment stage (production, staging, etc)
 ->user('deployer') // SSH user
